@@ -29,7 +29,7 @@ app.get('/vendor-b', async (req,res)=>{
         const stockValue = p.isAvailable ? "Tersedia" : "Kosong";
         return pool.query(
             
-            `INSERT INTO vendor_products(vendor,code,name,price,stock) VALUES($1,$2,$3,$4,$5)`,
+            `INSERT INTO products(vendor,code,name,price,stock) VALUES($1,$2,$3,$4,$5)`,
             
             ['VendorB', p.sku, p.productName, p.price, stockValue] 
         );
